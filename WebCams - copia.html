@@ -1,0 +1,76 @@
+<!DOCTYPE html>                     <!--WEBCAMS-->
+<html lang="es" dir="ltr"><!--Lenguaje de la pagina Español-->
+   <head>
+      <meta charset="iso-8559-1"/>
+      <meta name="description" content="Pagina de enseñanza html 5"/>
+      <meta name="keywords" content="html5, css3, javascript, diseño web"/><!--Palabras clave para encontrar mi pagina web en internet-->
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible"content="IE=edge">
+      <meta name="viewport"content="width="device-width, initial-scale=1.0">
+      
+      <title>IDFD.com pagina de inicio</title><!--titulo de la pag en el buscador-->
+
+      <link rel="stylesheet" href="css/estilos.css"/><!--enlace al archivo CSS-->
+
+      <script>
+      'use strict'
+      document.getElementById('canvas').style.display = 'none';
+      conts video = document.getElementById('video');
+      conts canvas = document.getElementById('canvas');
+
+      const constraints = {
+         audio: true;
+         video: {
+            width: 1280, height: 720
+         }
+      };
+      
+      async function init() {
+         try{
+            const stream = await
+            navigator.mediDevices.getUserMedia(constrains);
+            handleSuccess(stream);
+         } catch (e){
+            $("#mensaje").html("Debe de selecciona un dispositivo y permitir el acceso al navegador. Presione f5 0 Refresh en el navegador. <br clear='all'><br clear='all'>");
+         }
+      }
+
+      function handleSuccess(stram){
+         window.stream = stream;
+         video.srcobject = stream;
+      }
+
+      init()
+      var content = canvas.getContext('2d');
+      
+      </script>
+
+   </head>
+   <body>
+      <header><!--Cabecer de la pagina-->
+         <h1>IDFDCAMS WebCams</h1><!--Titulo pag inicio-->
+      </header>
+   <nav><!--Barra de Navegacion-->
+   <ul><!--Lista desordenada-->
+      <li><a href="index.html#">inicio</a></li>
+      <li><a href="nikita.html">nikita</a></li>
+      <li><a href="WebCams.html">WebCams</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
+      <li><a href="Pagos.html">Pagos</a></li>
+   </ul>
+   </nav>
+   </body>
+      <div class="div_centrado fondo_deg">
+          <div id="cont_webcam" class="div_centrado">
+          <video id="video" playsinline autoplay></video>
+          <canvas id="canvas" width="400px" heght="300px"></canvas>
+      </div>
+      <div id="mensaje" class="">
+      </div>
+    
+   <footer><!--Pie de pagina-->
+      <small>Copyright 2022 Todos los derechos reservado,queda prohibida total o parcialmente la reproduccio,venta,o cualquier uso de la pagina y su contenido.
+      <address>tlf: +34 643 15 52 40</address></small><!--Para telefono y contacto conmigo-->
+   </footer>
+   </body>
+</html>
